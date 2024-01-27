@@ -3,7 +3,6 @@ from scapy.layers.inet import IP, TCP
 from scapy.sendrecv import send
 
 
-DEFAULT_PACK = 999999999
 MAX_PORTS = 65535
 
 
